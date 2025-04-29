@@ -20,7 +20,7 @@ CFLAGS = \
 	-g \
 	-O0
 
-LDFLAGS = -nostdlib -L /usr/lib/gcc/arm-none-eabi/9.2.1 -lgcc
+LDFLAGS = -nostdlib -nostdlibinc
 #-Map=$(basename $@).map
 
 OBJS = tegra_uart.o printf.o
