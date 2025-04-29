@@ -20,7 +20,7 @@ CFLAGS = \
 	-g \
 	-O0
 
-LDFLAGS = -nostdlib -nostdlibinc
+LDFLAGS = -nostdlib
 #-Map=$(basename $@).map
 
 OBJS = tegra_uart.o printf.o
