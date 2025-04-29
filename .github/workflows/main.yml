@@ -18,14 +18,17 @@ jobs:
         path-env-var: ARM_NONE_EABI_GCC_PATH
     - name: Set CROSS_COMPILE environment variable
       run: echo "CROSS_COMPILE=$(echo "$ARM_NONE_EABI_GCC_PATH/arm-none-eabi-")" >> $GITHUB_ENV
-    - name: Configure and Build
+    - name: pwd
+      run: pwd
+    - name: Build
       run: |
-        pushd payloads
+        cd payloads
         make
-        popd
-        ls -R
+        pwd
+    - name: pwd
+      run: pwd
     - name: Archive production artifacts
       uses: actions/upload-artifact@v4
       with:
-          name: u-boot-tegra3
-          path: u-boot-dtb-tegra.bin
+          name: payloads
+          path: payloads/**.bin
