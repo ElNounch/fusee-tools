@@ -35,7 +35,6 @@
 
 #include "tegra_uart.h"
 #include "printf.h"
-#include <asm/div64.h>
 
 extern void lock_mutex(void* mutex);
 extern void unlock_mutex(void* mutex);
@@ -81,7 +80,7 @@ ksprintn(char *nbuf, uintmax_t num, int base, int *lenp, int upper)
 	do {
 		c = hex2ascii(num % base);
 		*++p = upper ? toupper(c) : c;
-	} while (num = do_div(num, base));
+	} while (num /= base);
 	if (lenp)
 		*lenp = p - nbuf;
 	return (p);
