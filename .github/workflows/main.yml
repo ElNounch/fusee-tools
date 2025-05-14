@@ -17,8 +17,9 @@ jobs:
       with:
         path-env-var: ARM_NONE_EABI_GCC_PATH
     - name: Set ARCH & CROSS_COMPILE environment variable
-      run: echo "ARCH=arm" >> $GITHUB_ENV
-      run: echo "CROSS_COMPILE=$(echo "$ARM_NONE_EABI_GCC_PATH/arm-none-eabi-")" >> $GITHUB_ENV
+      run: |
+        echo "ARCH=arm" >> $GITHUB_ENV
+        echo "CROSS_COMPILE=$(echo "$ARM_NONE_EABI_GCC_PATH/arm-none-eabi-")" >> $GITHUB_ENV
     - name: Build payloads
       run: |
         cd payloads
