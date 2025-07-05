@@ -13,7 +13,7 @@ jobs:
     - uses: tecolicom/actions-use-apt-tools@v1.6
       with:
         tools: libgnutls28-dev
-    - uses: carlosperate/arm-none-eabi-gcc-action@v1.10.0
+    - uses: carlosperate/arm-none-eabi-gcc-action@v1.10.1
       with:
         path-env-var: ARM_NONE_EABI_GCC_PATH
     - name: Set ARCH & CROSS_COMPILE environment variable
