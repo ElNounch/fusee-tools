@@ -22,7 +22,7 @@ CFLAGS = \
 	-g \
 	-O0
 
-LDFLAGS = -nostdlib
+LDFLAGS = -nostdlib -lgcc
 #`$(CC) -print-libgcc-file-name`
 # -nodefaultlibs  -nostdlib `$(CC) -print-libgcc-file-name` --gc-sections
 #`$(CC) -print-libgcc-file-name`
