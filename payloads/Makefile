@@ -21,7 +21,7 @@ CFLAGS = \
 	-g \
 	-O0
 
-LDFLAGS = -nostdlib -lgcc
+LDFLAGS = -nostdlib `$(CC) -print-libgcc-file-name` --gc-sections
 #`$(CC) -print-libgcc-file-name`
 #-Map=$(basename $@).map
 
