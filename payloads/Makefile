@@ -11,6 +11,7 @@ CFLAGS = \
 	-fno-stack-protector \
 	-fno-common \
 	-fno-builtin \
+	-nostartfiles \
 	-ffreestanding \
 	-std=gnu99 \
 	-Werror \
@@ -20,7 +21,7 @@ CFLAGS = \
 	-g \
 	-O0
 
-LDFLAGS = --nostartfiles -nostdlib `$(CC) -print-libgcc-file-name`
+LDFLAGS = -nostdlib `$(CC) -print-libgcc-file-name`
 #-Map=$(basename $@).map
 
 OBJS = tegra_uart.o printf.o
