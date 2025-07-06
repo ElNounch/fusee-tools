@@ -7,6 +7,7 @@ OBJCOPY = $(CROSS_COMPILE)objcopy
 
 CFLAGS = \
 	-mtune=arm7tdmi \
+	-mfloat-abi=soft \
 	-mlittle-endian \
 	-fno-stack-protector \
 	-fno-common \
@@ -21,7 +22,8 @@ CFLAGS = \
 	-g \
 	-O0
 
-LDFLAGS = -nodefaultlibs `$(CC) -print-libgcc-file-name`
+LDFLAGS = -nostdlib
+#`$(CC) -print-libgcc-file-name`
 # -nodefaultlibs  -nostdlib `$(CC) -print-libgcc-file-name` --gc-sections
 #`$(CC) -print-libgcc-file-name`
 #-Map=$(basename $@).map
