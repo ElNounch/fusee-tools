@@ -21,10 +21,7 @@ CFLAGS = \
 	-g \
 	-O0
 
-LDFLAGS = -nostdlib -static `$(CC) -print-libgcc-file-name`
-#`$(CC) -print-libgcc-file-name`
-# -nodefaultlibs  -nostdlib `$(CC) -print-libgcc-file-name` --gc-sections
-#`$(CC) -print-libgcc-file-name`
+LDFLAGS = -nostdlib `$(CROSS_COMPILE)gcc -print-libgcc-file-name`
 #-Map=$(basename $@).map
 
 OBJS = tegra_uart.o printf.o
