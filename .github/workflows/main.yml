@@ -22,9 +22,9 @@ jobs:
         echo "CROSS_COMPILE=$(echo "$ARM_NONE_EABI_GCC_PATH/arm-none-eabi-")" >> $GITHUB_ENV
     - name: Documentation - Crosscompiler switchs
       run: |
-        "${{CROSS_COMPILE}}gcc" -print-multi-lib
-        "${{CROSS_COMPILE}}gcc" --help
-        "${{CROSS_COMPILE}}ld" --help
+        "${{env.CROSS_COMPILE}}gcc" -print-multi-lib
+        "${{env.CROSS_COMPILE}}gcc" --help
+        "${{env.CROSS_COMPILE}}ld" --help
     - name: Build payloads
       run: |
         cd payloads
