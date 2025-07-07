@@ -6,8 +6,7 @@ LD      = $(CROSS_COMPILE)ld
 OBJCOPY = $(CROSS_COMPILE)objcopy
 
 CFLAGS = \
-	-mtune=arm7tdmi \
-	-mfloat-abi=soft \
+	-mtune=arm7tdmi+nofp \
 	-mlittle-endian \
 	-fno-stack-protector \
 	-fno-common \
