@@ -21,10 +21,10 @@ CFLAGS = \
 	-g \
 	-O0
 
-LDFLAGS = -nostdlib `$(CROSS_COMPILE)gcc -print-libgcc-file-name`
+LDFLAGS = -nostdlib
 #-Map=$(basename $@).map
 
-OBJS = tegra_uart.o printf.o
+OBJS = tegra_uart.o printf.o uldivmod.o
 
 #OBJS_T20	= T20_bootrom_usb_helper.o
 OBJS_T30	= T30_bootrom_usb_helper.o
